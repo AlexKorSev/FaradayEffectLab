@@ -14,5 +14,7 @@ public class GeneratorModel
     /// 1 – генератор включен)
     /// </summary>
     public double power;
-    
+
+    public static double AttenuationMin = 20;
+    public static double AttenuationMax = 80;
 }
