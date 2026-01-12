@@ -1,14 +1,15 @@
 using UnityEngine;
 using TMPro;
 
-public class GeneratorLabel1 : MonoBehaviour
+
+public class AmplifierValueLabel : MonoBehaviour
 {
     public TextMeshProUGUI label;
 
-    // Update is called once per frame
     void Update()
     {
         var ctx = InstallationContext.shared;
-        label.SetText(ctx.generatorController.label1Value());
+        label.SetText(ctx.amplifierController.labelValue());
     }
 }
+

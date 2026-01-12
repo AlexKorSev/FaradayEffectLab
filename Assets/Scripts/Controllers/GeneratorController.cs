@@ -2,14 +2,11 @@ using UnityEngine;
 
 public class GeneratorController
 {
-    public static GeneratorController shared = new GeneratorController();
     private GeneratorModel model;
 
-    public GeneratorController()
+    public GeneratorController(GeneratorModel model)
     {
-        this.model = new GeneratorModel();
-        model.attenuation = GeneratorModel.AttenuationMin;
-        model.power = 0;
+        this.model = model;
     }
 
     public void SetAttenuation(double value)
@@ -37,9 +34,9 @@ public class GeneratorController
         return model.attenuation;
     }
 
-    public bool GetPower()
+    public double GetPower()
     {
-        return model.power == 1;
+        return model.power;
     }
 
     public double GetOutputSignal()
@@ -47,6 +44,22 @@ public class GeneratorController
         var attenuation = GetAttenuation();
         var result = CalculationService.GeneratorSignalOutput(attenuation);
         return result;
+    }
+
+    public string label1Value()
+    {
+        if (model.power == 0)
+        {
+            return "0";
+        }
+        double u = CalculationService.GeneratorSignalOutput(model.attenuation);
+        return ((int)u).ToString();
+    }
+    public string label2Value()
+    {
+        var attinuation = model.attenuation;
+        var correct = (int)attinuation;
+        return correct.ToString();
     }
     
 }

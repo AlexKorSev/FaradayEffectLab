@@ -1,3 +1,5 @@
+using System;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,29 +8,42 @@ public class MainController : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     // [SerializeField]
-    public GeneratorController generator;
+
     // [SerializeField]
     // public AmplifierController amplifier;
     void Start()
     {
-        generator = GeneratorController.shared;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        var generator = InstallationContext.shared.generatorController;
         if (Keyboard.current.wKey.wasPressedThisFrame)
         {
-            var currentAttenuation = generator.GetAttenuation();
-            generator.SetAttenuation(currentAttenuation + 5);
-            Debug.Log(currentAttenuation);
+            var nextStep = generator.GetAttenuation() + 5;
+            generator.SetAttenuation(nextStep);
         }
 
         if (Keyboard.current.sKey.wasPressedThisFrame)
         {
-            var currentAttenuation = generator.GetAttenuation();
-            generator.SetAttenuation(currentAttenuation - 5);
-            Debug.Log(currentAttenuation);
+            var nextStep = generator.GetAttenuation() - 5;
+            generator.SetAttenuation(nextStep);
+        }
+        
+        
+        var faraday = InstallationContext.shared.faradayController;
+        if (Keyboard.current.leftArrowKey.wasPressedThisFrame)
+        {
+            var nextStep = faraday.GetCurrentTheta() + Math.PI/12;
+            faraday.SetCurrentTheta(nextStep);
+            
+        }
+        if (Keyboard.current.rightArrowKey.wasPressedThisFrame)
+        {
+            var nextStep = faraday.GetCurrentTheta() - Math.PI/12;
+            faraday.SetCurrentTheta(nextStep);
         }
     }
 
