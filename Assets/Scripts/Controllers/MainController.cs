@@ -45,6 +45,18 @@ public class MainController : MonoBehaviour
             var nextStep = faraday.GetCurrentTheta() - Math.PI/12;
             faraday.SetCurrentTheta(nextStep);
         }
+        
+        if (Keyboard.current.upArrowKey.wasPressedThisFrame)
+        {
+            var nextStep = faraday.GetCurrent() + 0.1;
+            faraday.SetCurrent(nextStep);
+            
+        }
+        if (Keyboard.current.downArrowKey.wasPressedThisFrame)
+        {
+            var nextStep = faraday.GetCurrent() - 0.1;
+            faraday.SetCurrent(nextStep);
+        }
     }
 
 }
