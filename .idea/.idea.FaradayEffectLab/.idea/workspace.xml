@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e59d0069-dcb8-42b8-98d2-438f462a7ce9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.FaradayEffectLab/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FaradayEffectLab/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainController.cs" afterDir="false" />
-    </list>
+    <list default="true" id="e59d0069-dcb8-42b8-98d2-438f462a7ce9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,7 +90,7 @@
       <workItem from="1766738753143" duration="8751000" />
       <workItem from="1768135458331" duration="1906000" />
       <workItem from="1768220690245" duration="8453000" />
-      <workItem from="1768928565988" duration="186000" />
+      <workItem from="1768928565988" duration="691000" />
     </task>
     <servers />
   </component>
